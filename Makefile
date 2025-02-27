@@ -5,3 +5,8 @@ SNAP_FILE := $(SNAP_NAME)_$(VERSION)_$(ARCH).snap
 
 .PHONY: all build clean install uninstall
 
+all: build
+
+build:
+	@echo "Building $(SNAP_NAME) version $(VERSION)..."
+	snapcraft --debug
