@@ -10,3 +10,8 @@ all: build
 build:
 	@echo "Building $(SNAP_NAME) version $(VERSION)..."
 	snapcraft --debug
+
+install: build
+	@echo "Installing $(SNAP_FILE)..."
+	sudo snap install $(SNAP_FILE) --dangerous
+
