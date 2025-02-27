@@ -15,3 +15,11 @@ install: build
 	@echo "Installing $(SNAP_FILE)..."
 	sudo snap install $(SNAP_FILE) --dangerous
 
+uninstall:
+	@echo "Uninstalling $(SNAP_NAME)..."
+	sudo snap remove $(SNAP_NAME)
+
+clean:
+	@echo "Cleaning build artifacts..."
+	snapcraft clean
+	rm -f *.snap
