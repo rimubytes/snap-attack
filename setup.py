@@ -12,3 +12,11 @@ PACKAGE_INFO = {
     "license": "MIT",
     "url": "https://snapcraft.io/snapattack",
 }
+
+DEV_REQUIREMENTS = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
