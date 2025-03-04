@@ -1,0 +1,4 @@
+psutil==5.9.7  # System monitoring utilities
+Twisted==23.10.0  # Asynchronous networking engine
+scapy==2.5.0  # Packet manipulation and network attacks
+
