@@ -1,4 +1,7 @@
 psutil==5.9.7  # System monitoring utilities
 Twisted==23.10.0  # Asynchronous networking engine
 scapy==2.5.0  # Packet manipulation and network attacks
-
+paramiko==3.3.1  # SSH client for automation
+requests==2.31.0  # HTTP requests for interaction
+click==8.1.7  # CLI framework for better command-line tools
+rich==13.7.0  # Pretty terminal output
