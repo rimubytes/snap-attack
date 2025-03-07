@@ -13,3 +13,13 @@ def ssh_attack(target: str, username: str, password: str) -> None:
     """Attempt SSH login to simulate brute-force testing."""
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    try:
+        client.connect(target, username=username, password=password, timeout=5)
+        print(f"[+] SUCCESS: Logged into {target} as {username}")
+    except paramiko.AuthenticationException:
+        print(f"[-] FAILED: Invalid credentials for {target}")
+    except Exception as e:
+        print(f"[!] ERROR: {e}")
+    finally:
+        client.close()
