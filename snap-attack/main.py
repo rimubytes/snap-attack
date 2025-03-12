@@ -33,3 +33,12 @@ def main():
     parser.add_argument("--password", type=str, help="Password for SSH attack")
 
     args = parser.parse_args()
+
+    if args.mode == "scan" and args.interface:
+        scan_thread = threading.Thread(target=scan_network, args=(args.interface,))
+        scan_thread.start()
+    elif args.mode == "attack" and args.target and args.user and args.password:
+        ssh_thread = threading.Thread(target=ssh_attack, args=(args.target, args.user, args.password))
+        ssh_thread.start()
+    else:
+        print("[!] Invalid arguments. Use --help for usage details.")
