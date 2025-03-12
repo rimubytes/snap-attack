@@ -23,3 +23,13 @@ def ssh_attack(target: str, username: str, password: str) -> None:
         print(f"[!] ERROR: {e}")
     finally:
         client.close()
+
+def main():
+    parser = argparse.ArgumentParser(description="Snap-Attack: A network security toolkit")
+    parser.add_argument("--mode", choices=["scan", "attack"], required=True, help="Mode of operation")
+    parser.add_argument("--interface", type=str, help="Network interface to scan")
+    parser.add_argument("--target", type=str, help="Target IP for SSH attack")
+    parser.add_argument("--user", type=str, help="Username for SSH attack")
+    parser.add_argument("--password", type=str, help="Password for SSH attack")
+
+    args = parser.parse_args()
